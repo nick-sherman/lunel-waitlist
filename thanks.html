@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You – Lunel</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .thankyou-container {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(16, 30, 54, 0.08);
+            padding: 48px 32px;
+            max-width: 400px;
+            text-align: center;
+        }
+        .app-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px auto;
+        }
+        .waveform {
+            display: flex;
+            gap: 2px;
+            align-items: center;
+        }
+        .wave-bar {
+            width: 3px;
+            background: linear-gradient(to right, #60a5fa, #3b82f6, #1d4ed8);
+            border-radius: 2px;
+        }
+        .thankyou-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 16px;
+        }
+        .thankyou-message {
+            font-size: 18px;
+            color: #64748b;
+            margin-bottom: 32px;
+        }
+        .home-link {
+            display: inline-block;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            color: white;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .home-link:hover {
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+        }
+    </style>
+</head>
+<body>
+    <div class="thankyou-container">
+        <div class="app-icon">
+            <div class="waveform">
+                <div class="wave-bar" style="height: 8px;"></div>
+                <div class="wave-bar" style="height: 16px;"></div>
+                <div class="wave-bar" style="height: 24px;"></div>
+                <div class="wave-bar" style="height: 12px;"></div>
+                <div class="wave-bar" style="height: 20px;"></div>
+                <div class="wave-bar" style="height: 10px;"></div>
+                <div class="wave-bar" style="height: 18px;"></div>
+            </div>
+        </div>
+        <div class="thankyou-title">Thank you!</div>
+        <div class="thankyou-message">
+            You've been added to the Lunel waitlist.<br>
+            We'll keep you posted with updates and launch news.
+        </div>
+        <a href="/" class="home-link">← Back to homepage</a>
+    </div>
+</body>
+</html> 
