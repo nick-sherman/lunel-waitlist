@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunel - Wedding DJ Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .content {
+            max-width: 500px;
+        }
+        
+        .app-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 48px;
+        }
+        
+        .app-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .waveform {
+            display: flex;
+            gap: 2px;
+            align-items: center;
+        }
+        
+        .wave-bar {
+            width: 3px;
+            background: linear-gradient(to right, #60a5fa, #3b82f6, #1d4ed8);
+            border-radius: 2px;
+        }
+        
+        .app-name {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+        
+        .headline {
+            font-size: 56px;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+        
+        .subheading {
+            font-size: 18px;
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+        
+        .signup-form {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .email-input {
+            flex: 1;
+            padding: 16px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 16px;
+            background: white;
+            transition: border-color 0.2s;
+        }
+        
+        .email-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+        
+        .cta-button {
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+            white-space: nowrap;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-1px);
+        }
+        
+        .follow-link {
+            color: #64748b;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        
+        .phone-mockup {
+            position: relative;
+            max-width: 300px;
+            margin-left: auto;
+        }
+        
+        .phone-frame {
+            width: 300px;
+            height: 600px;
+            background: #1a1a1a;
+            border-radius: 40px;
+            padding: 8px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+        
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: #000;
+            border-radius: 32px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .app-interface {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #1e293b, #0f172a);
+            padding: 60px 20px 20px;
+            color: white;
+        }
+        
+        .status-bar {
+            position: absolute;
+            top: 12px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .event-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .event-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .event-subtitle {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+        
+        .playlist-section {
+            background: rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #60a5fa;
+        }
+        
+        .song-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .song-item:last-child {
+            border-bottom: none;
+        }
+        
+        .song-waveform {
+            width: 40px;
+            height: 20px;
+            display: flex;
+            align-items: end;
+            gap: 1px;
+        }
+        
+        .mini-bar {
+            width: 2px;
+            background: #3b82f6;
+            border-radius: 1px;
+        }
+        
+        .song-info {
+            flex: 1;
+        }
+        
+        .song-name {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .song-artist {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+        
+        .controls {
+            position: absolute;
+            bottom: 30px;
+            left: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(20px);
+        }
+        
+        .now-playing {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-bottom: 8px;
+        }
+        
+        .current-song {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        
+        .main-waveform {
+            height: 40px;
+            background: linear-gradient(to right, #60a5fa, #3b82f6, #1d4ed8);
+            border-radius: 20px;
+            margin-bottom: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .waveform-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60%;
+            height: 100%;
+            background: rgba(255,255,255,0.3);
+            border-radius: 20px;
+        }
+        
+        .play-controls {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            align-items: center;
+        }
+        
+        .control-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .play-btn {
+            width: 56px;
+            height: 56px;
+            background: #3b82f6;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="app-header">
+                <div class="app-icon">
+                    <div class="waveform">
+                        <div class="wave-bar" style="height: 8px;"></div>
+                        <div class="wave-bar" style="height: 16px;"></div>
+                        <div class="wave-bar" style="height: 24px;"></div>
+                        <div class="wave-bar" style="height: 12px;"></div>
+                        <div class="wave-bar" style="height: 20px;"></div>
+                        <div class="wave-bar" style="height: 10px;"></div>
+                        <div class="wave-bar" style="height: 18px;"></div>
+                    </div>
+                </div>
+                <div class="app-name">Lunel</div>
+            </div>
+            
+            <h1 class="headline">The ultimate platform for wedding DJs</h1>
+            
+            <p class="subheading">
+                Streamline your wedding events, manage playlists, and create unforgettable moments for couples on their special day. Join the waitlist to be first in line.
+            </p>
+            
+            <form class="signup-form">
+                <input type="email" class="email-input" placeholder="Enter your email" required>
+                <button type="submit" class="cta-button">Join waitlist</button>
+            </form>
+            
+            <a href="#" class="follow-link">Follow @lunel for updates ↗</a>
+        </div>
+        
+        <div class="phone-mockup">
+            <div class="phone-frame">
+                <div class="phone-screen">
+                    <div class="status-bar">
+                        <span>9:41</span>
+                        <div style="display: flex; gap: 4px;">
+                            <span>●●●</span>
+                            <span>📶</span>
+                            <span>🔋</span>
+                        </div>
+                    </div>
+                    
+                    <div class="app-interface">
+                        <div class="event-header">
+                            <div class="event-title">Sarah & Michael's Wedding</div>
+                            <div class="event-subtitle">June 29, 2025 • 6:00 PM</div>
+                        </div>
+                        
+                        <div class="playlist-section">
+                            <div class="section-title">💍 Ceremony Playlist</div>
+                            <div class="song-item">
+                                <div class="song-waveform">
+                                    <div class="mini-bar" style="height: 8px;"></div>
+                                    <div class="mini-bar" style="height: 16px;"></div>
+                                    <div class="mini-bar" style="height: 12px;"></div>
+                                    <div class="mini-bar" style="height: 20px;"></div>
+                                    <div class="mini-bar" style="height: 6px;"></div>
+                                </div>
+                                <div class="song-info">
+                                    <div class="song-name">A Thousand Years</div>
+                                    <div class="song-artist">Christina Perri</div>
+                                </div>
+                            </div>
+                            <div class="song-item">
+                                <div class="song-waveform">
+                                    <div class="mini-bar" style="height: 12px;"></div>
+                                    <div class="mini-bar" style="height: 8px;"></div>
+                                    <div class="mini-bar" style="height: 18px;"></div>
+                                    <div class="mini-bar" style="height: 14px;"></div>
+                                    <div class="mini-bar" style="height: 10px;"></div>
+                                </div>
+                                <div class="song-info">
+                                    <div class="song-name">Perfect</div>
+                                    <div class="song-artist">Ed Sheeran</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="playlist-section">
+                            <div class="section-title">🎉 Reception Playlist</div>
+                            <div class="song-item">
+                                <div class="song-waveform">
+                                    <div class="mini-bar" style="height: 16px;"></div>
+                                    <div class="mini-bar" style="height: 20px;"></div>
+                                    <div class="mini-bar" style="height: 14px;"></div>
+                                    <div class="mini-bar" style="height: 18px;"></div>
+                                    <div class="mini-bar" style="height: 8px;"></div>
+                                </div>
+                                <div class="song-info">
+                                    <div class="song-name">Uptown Funk</div>
+                                    <div class="song-artist">Bruno Mars</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="controls">
+                            <div class="now-playing">NOW PLAYING</div>
+                            <div class="current-song">Can't Stop the Feeling!</div>
+                            <div class="main-waveform">
+                                <div class="waveform-progress"></div>
+                            </div>
+                            <div class="play-controls">
+                                <button class="control-btn">⏮</button>
+                                <button class="control-btn play-btn">⏸</button>
+                                <button class="control-btn">⏭</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
