@@ -4,89 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You – Lunel</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            background: #f8fafc;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .thankyou-container {
-            background: white;
-            border-radius: 24px;
-            box-shadow: 0 8px 32px rgba(16, 30, 54, 0.08);
-            padding: 48px 32px;
-            max-width: 400px;
-            text-align: center;
-        }
-        .app-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, #1e293b, #0f172a);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px auto;
-        }
-        .waveform {
-            display: flex;
-            gap: 2px;
-            align-items: center;
-        }
-        .wave-bar {
-            width: 3px;
-            background: linear-gradient(to right, #60a5fa, #3b82f6, #1d4ed8);
-            border-radius: 2px;
-        }
-        .thankyou-title {
-            font-size: 32px;
-            font-weight: 700;
-            color: #0f172a;
-            margin-bottom: 16px;
-        }
-        .thankyou-message {
-            font-size: 18px;
-            color: #64748b;
-            margin-bottom: 32px;
-        }
-        .home-link {
-            display: inline-block;
-            padding: 12px 28px;
-            background: linear-gradient(135deg, #6366f1, #4f46e5);
-            color: white;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: background 0.2s;
-        }
-        .home-link:hover {
-            background: linear-gradient(135deg, #4f46e5, #6366f1);
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="thankyou-container">
-        <div class="app-icon">
-            <div class="waveform">
-                <div class="wave-bar" style="height: 8px;"></div>
-                <div class="wave-bar" style="height: 16px;"></div>
-                <div class="wave-bar" style="height: 24px;"></div>
-                <div class="wave-bar" style="height: 12px;"></div>
-                <div class="wave-bar" style="height: 20px;"></div>
-                <div class="wave-bar" style="height: 10px;"></div>
-                <div class="wave-bar" style="height: 18px;"></div>
+<body class="bg-slate-50 min-h-screen flex items-center justify-center font-sans">
+    <div class="bg-white rounded-3xl shadow-2xl px-8 py-12 max-w-md w-full text-center">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-slate-800 to-slate-900 mx-auto mb-6">
+            <div class="flex gap-0.5 items-center">
+                <div class="w-[3px] h-2 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-900 rounded"></div>
+                <div class="w-[3px] h-4 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-900 rounded"></div>
+                <div class="w-[3px] h-6 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-900 rounded"></div>
+                <div class="w-[3px] h-3 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-900 rounded"></div>
+                <div class="w-[3px] h-5 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-900 rounded"></div>
+                <div class="w-[3px] h-2.5 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-900 rounded"></div>
+                <div class="w-[3px] h-4.5 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-900 rounded"></div>
             </div>
         </div>
-        <div class="thankyou-title">Thank you!</div>
-        <div class="thankyou-message">
+        <div class="text-3xl font-bold text-slate-900 mb-4">Thank you!</div>
+        <div class="text-lg text-slate-500 mb-8">
             You've been added to the Lunel waitlist.<br>
             We'll keep you posted with updates and launch news.
         </div>
-        <a href="/" class="home-link">← Back to homepage</a>
+        <a href="/" class="inline-block px-7 py-3 bg-gradient-to-br from-indigo-500 to-indigo-700 text-white rounded-xl text-base font-semibold transition hover:from-indigo-700 hover:to-indigo-500">← Back to homepage</a>
     </div>
 </body>
 </html> 
