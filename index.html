@@ -313,6 +313,69 @@
             font-size: 20px;
         }
     </style>
+    <style>
+        /* Responsive styles */
+        @media (max-width: 1024px) {
+            .container {
+                gap: 40px;
+                padding: 0 16px;
+            }
+            .headline {
+                font-size: 40px;
+            }
+        }
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 0 8vw;
+            }
+            .content {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+            .phone-mockup {
+                max-width: 320px;
+                margin: 32px auto 0 auto;
+            }
+            .headline {
+                font-size: 32px;
+            }
+            .subheading {
+                font-size: 16px;
+            }
+            .signup-form {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .cta-button {
+                width: 100%;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 2vw;
+            }
+            .phone-frame {
+                width: 100vw;
+                max-width: 98vw;
+                height: 60vw;
+                max-height: 80vw;
+                min-width: 220px;
+                min-height: 400px;
+            }
+            .headline {
+                font-size: 24px;
+            }
+            .subheading {
+                font-size: 14px;
+            }
+            .cta-button, .email-input {
+                font-size: 15px;
+                padding: 14px 12px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
